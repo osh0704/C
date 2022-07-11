@@ -1,0 +1,19 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+int main(void)
+{
+	int n1, n2, tmp, cnt = 0;
+	scanf("%d", &n1);
+	n2 = n1;
+	for (;;) {
+		tmp = (n1 % 10) * 10;
+		n1 = (n1 / 10) + (n1 % 10);
+		if (n1 >= 10) n1 %= 10;
+		n1 += tmp;
+		cnt++;
+		if (n1 == n2) {
+			printf("%d", cnt);
+			break;
+		}
+	}
+}
