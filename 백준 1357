@@ -1,0 +1,26 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+int Rev(int n) {
+	int sum;
+	if (n >= 1000) {
+		if (n == 1000) return 1;
+		sum = (n / 1000) + (n / 100 % 10 * 10) + (n % 100 / 10 * 100) + (n % 10 * 1000);
+	}
+	else if (n >= 100) {
+		sum = (n / 100) + (n % 10 * 100) + (n % 100 / 10 * 10);
+	}
+	else if (n >= 10) {
+		sum = (n / 10) + (n % 10 * 10);
+	}
+	else sum = n;
+
+	return sum;
+	
+}
+int main()
+{
+	int iNum1, iNum2, sum = 0;
+	scanf("%d %d", &iNum1, &iNum2);
+	sum = Rev(iNum1) + Rev(iNum2);
+	printf("%d", Rev(sum));
+}
