@@ -1,0 +1,22 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+int dou(double n1, double n2) {
+	if (n1 < 0) n1 *= -1;
+	if (n2 < 0) n2 *= -1;
+	return (n1 > n2) ? n1 : n2;
+}
+int intN(int n1, int n2) {
+	if (n1 < 0) n1 *= -1;
+	if (n2 < 0) n2 *= -1;
+	return (n1 > n2) ? n1 : n2;
+}
+int main()
+{
+	int n1, n2;
+	double n3, n4;
+	scanf("%d %d", &n1, &n2);
+	scanf("%lf %lf", &n3, &n4);
+	printf("%d\n", intN(n1, n2));
+	printf("%.2lf\n", dou(n3, n4));
+
+}
