@@ -1,0 +1,42 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+int commit(int n) {
+	if (n >= 10000) {
+		if (n / 10000 == n % 10) {
+			if (n / 1000 % 10 == n % 100 / 10) return 1;
+			else return 0;
+		}
+		else return 0;
+	}
+	else if (n >= 1000) {
+		if (n / 1000 == n % 10) {
+			if (n / 100 % 10 == n % 100 / 10) return 1;
+			else return 0;
+		}
+	}
+	else if (n >= 100) {
+		if (n / 100 == n % 10) return 1;
+		else return 0;
+	}
+	else if (n >= 10) {
+		if (n / 10 == n % 10) return 1;
+		else return 0;
+	}
+	else return 1;
+}
+int main()
+{
+	int sum[100000];
+	int iNum, cnt = 0;
+	for (int i = 0;; i++) {
+		scanf("%d", &iNum);
+		if (iNum == 0) break;
+		if (commit(iNum) == 1) sum[i] = 1;
+		else sum[i] = 0;
+		cnt++;
+	}
+	for (int i = 0; i < cnt; i++) {
+		if (sum[i] == 0) printf("no\n");
+		else printf("yes\n");
+	}
+}
