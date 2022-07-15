@@ -1,0 +1,15 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+int rev(int n) {
+	if (n < 0) n *= -1;
+	return n;
+}
+int main()
+{
+	int n, sum = 0;
+	for (int i = 0; i < 5; i++) {
+		scanf("%d", &n);
+		sum += rev(n);
+	}
+	printf("%d", sum);
+}
