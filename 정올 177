@@ -12,4 +12,6 @@ int main()
 		sum += rev(n);
 	}
 	printf("%d", sum);
+	return 0;
 }
+
