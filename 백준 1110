@@ -8,7 +8,7 @@ int main(void)
 	for (;;) {
 		tmp = (n1 % 10) * 10;
 		n1 = (n1 / 10) + (n1 % 10);
-		if (n1 >= 10) n1 %= 10;
+		if (n1 >=  10) n1 %= 10;
 		n1 += tmp;
 		cnt++;
 		if (n1 == n2) {
