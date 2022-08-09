@@ -15,7 +15,7 @@ int main()
 					arr[i + 1][j] = '?';
 				}
 			}
-		}
+	}
 		if (i == n - 1) {
 			printf("%s", &arr[i]);
 			break;
