@@ -1,0 +1,58 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+int count(int i, int n) {
+	int rnum = 0;
+	switch (i) {
+	case 1:
+	case 2:
+		for (;;) {
+			if (n == 1) return rnum;
+			else if (n < 1) {
+				rnum++;
+				n++;
+			}
+			else {
+				rnum--;
+				n--;
+			}
+		}
+	case 3:
+	case 4:
+	case 5:
+		for (;;) {
+			if (n == 2) return rnum;
+			else if (n > 2) {
+				n--;
+				rnum--;
+			}
+			else {
+				rnum++;
+				n++;
+			}
+		}
+	case 6:
+		for (;;) {
+			if (n == 8) return rnum;
+			else if (n > 8) {
+				n--;
+				rnum--;
+			}
+			else {
+				rnum++;
+				n++;
+			}
+		}
+	}
+}
+int main()
+{
+	int iNum[6], rNum[6];
+	for (int i = 0; i < 6; i++) {
+		scanf("%d", &iNum[i]);
+		rNum[i] = count(i + 1, iNum[i]);
+	}
+	for (int i = 0; i < 6; i++) {
+		printf("%d ", rNum[i]);
+	}
+	return 0;
+}
