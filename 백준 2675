@@ -4,7 +4,6 @@ int main()
 {
 	int T, R[1500] = { 0 };
 	char S[1500][250] = { 0 };
-	char P[1500][250] = {0};
 	scanf("%d", &T);
 	for (int i = 0; i < T; i++) scanf("%d %s", &R[i], &S[i]);
 	for (int i = 0; i < T; i++) {
