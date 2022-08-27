@@ -2,7 +2,7 @@
 #include<stdio.h>
 int main()
 {
-	int T, iNum, min = 1000001, max = -1000001;
+	int T, iNum, min = 1000001, max = -1000010;
 	scanf("%d", &T);
 	for (int i = 0; i < T; i++) {
 		scanf("%d", &iNum);
