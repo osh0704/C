@@ -2,7 +2,7 @@
 #include<stdio.h>
 int main()
 {
-	int n, m, o;
+	int n, m, o, q;
 	while (scanf("%d %d", &n, &m) != EOF)
 		printf("%d\n", n + m);
 	return 0;
