@@ -1,0 +1,15 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+int main()
+{
+	int hour, min;
+	scanf("%d %d", &hour, &min);
+	min -= 45;
+	if (min < 0) {
+		hour -= 1;
+		min += 60;
+	}
+	if (hour >= 24) hour %= 24;
+	if (hour < 0) hour += 24;
+	printf("%d %d", hour, min);
+}
