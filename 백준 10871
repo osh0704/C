@@ -1,0 +1,14 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+int main()
+{
+	int N, X, res[10000];
+	scanf("%d %d", &N, &X);
+	for (int i = 0; i < N; i++) scanf("%d", &res[i]);
+
+	for (int i = 0; i < N; i++) {
+		if (res[i] < X) printf("%d ", res[i]);
+	}
+
+	return 0;
+}
