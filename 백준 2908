@@ -1,0 +1,13 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+int main()
+{
+	int A, B, resu, res;
+	scanf("%d %d", &A, &B);
+	resu = (A / 100) + (A / 10 % 10 * 10) + (A % 10 * 100);
+	res = (B / 100) + (B / 10 % 10 * 10) + (B % 10 * 100);
+	if (res > resu) printf("%d", res);
+	else printf("%d", resu);
+
+	return 0;
+}
