@@ -1,0 +1,38 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+int plus(int i) {
+	int res = 0;
+	if (i >= 100000) res = i + (i / 100000) + (i / 10000 % 10) + (i / 1000 % 10) + (i / 100 % 10) + (i / 10 % 10) + (i % 10);
+	else if (i >= 10000) res = i + (i / 10000) + (i / 1000 % 10) + (i / 100 % 10) + (i / 10 % 10) + (i % 10);
+	else if (i >= 1000) res = i + (i / 1000) + (i / 100 % 10) + (i / 10 % 10) + (i % 10);
+	else if (i >= 100) res = i + (i / 100) + (i / 10 % 10) + (i % 10);
+	else if (i >= 10) res = i + (i / 10) + (i % 10);
+	else res = i + i;
+
+	return res;
+}
+int main()
+{
+	int N, res = 0;
+	scanf("%d", &N);
+	if (N > 54) {
+		for (int i = N - 55; i <= N; i++) {
+			res = plus(i);
+			if (res == N) {
+				printf("%d", i);
+				return 0;
+			}
+		}
+	}
+	else {
+		for (int i = 1; i <= N; i++) {
+			res = plus(i);
+			if (res == N) {
+				printf("%d", i);
+				return 0;
+			}
+		}
+	}
+
+	printf("0");
+}
