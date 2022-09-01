@@ -1,0 +1,23 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+int main()
+{
+	char word[1000000];
+	int cnt[26] = { 0 }, alp = 0, max = 0, tmp = 0;
+	scanf("%s", word);
+    int len = strlen(word);
+	for (int i = 0; i < len; i++) {
+		if (word[i] >= 97) cnt[word[i] - 97]++;
+		else cnt[word[i] - 65]++;
+	}
+	
+	for (int i = 0; i < 26; i++) {
+		if (max == cnt[i]) alp = cnt[i];
+		if (max < cnt[i]) {
+			max = cnt[i];
+			tmp = i;
+		}
+	}
+	if (alp == max) printf("?");
+	else printf("%c", tmp + 65);
+}
