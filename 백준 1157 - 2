@@ -10,7 +10,7 @@ int main()
 	for (int i = 97; i <= 122; i++) cnt[i - 32] += cnt[i];
 	for (int i = 65; i < 97; i++) {
 		if (cnt[i] == max) sam = max;
-		if (cnt[i] > max) {
+		if (cnt[i] > max) { 
 			max = cnt[i];
 			tmp = i;
 		}
