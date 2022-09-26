@@ -1,0 +1,44 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<time.h>
+#define size 10
+int arr[size];
+void show() {
+	for (int i = 0; i < size; i++) printf("%d ", arr[i]);
+	printf("\n");
+}
+
+void insertion_sort(int n) {
+	int tmp = 0, i, j;
+	
+	for (int i = 0; i < n - 1; i++) {
+		
+		tmp = arr[i + 1];
+		
+		for (j = i; j >= 0 && arr[j] > tmp; j--) {
+			arr[j + 1] = arr[j];
+			
+		}
+		
+		arr[j + 1] = tmp;
+		printf("%d단계 : ", i + 1);
+		show();
+	}
+}
+
+int main() {
+	int n = size;
+	srand(time(NULL));
+
+	for (int i = 0; i < n; i++) arr[i] = rand() % 100;
+	
+	printf("정렬 전 : ");
+	show();
+	printf("\n");
+
+	insertion_sort(n);
+
+	printf("\n정렬 후 :");
+	show();
+
+}
