@@ -1,0 +1,44 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<string.h>
+#define size 50
+char stack[size];
+int top = -1;
+
+int is_empty() {
+	if (top == -1)
+		return 1;
+	return 0;
+}
+void push(char ch) {
+	stack[++top] = ch;
+}
+int pop() {
+	if (is_empty()) return 0;
+	return stack[top--];
+}
+
+int main()
+{
+	int tc, p = 1, i;
+	char st[50];
+	scanf("%d", &tc);
+	while (tc--) {
+		scanf("%s", st);
+		int len = strlen(st);
+
+		for (int i = 0; i < len; i++) {
+			if (st[i] == '(') push(st[i]);
+			else {
+				p = pop();
+				if (p==0) break;
+				
+			}
+		}
+
+		if (is_empty() == 1 && p != 0) printf("YES\n");
+		else printf("NO\n");
+		
+		top = -1;
+	}
+}
