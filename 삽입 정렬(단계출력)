@@ -1,0 +1,60 @@
+#include<stdio.h>
+#include<time.h>
+#define size 10
+int arr[size];
+
+void show_sort(int i) {
+	
+	printf("\n(");
+	
+	for (int a = 0; a < i; a++) {
+		printf("%d", arr[a]);
+		if(a != i - 1) printf(",");
+	}
+	
+	printf(")");
+
+	printf("                (");
+	
+	for (int a = i; a < size; a++) {
+		printf("%d", arr[a]);
+		if(a != size - 1) printf(",");
+	}
+	
+	printf(")");
+
+}
+
+void insert_sort() {
+	int key, i, j;
+	for (i = 0; i < size - 1; i++) {
+		
+		show_sort(i);
+
+		key = arr[i + 1];
+		for (j = i; j >= 0 && key < arr[j]; j--) {
+			arr[j + 1] = arr[j];
+		}
+		arr[j + 1] = key;
+		
+	}
+	show_sort(i++);
+	show_sort(i);
+}
+
+void show() {
+	for (int i = 0; i < size; i++) printf("%d ", arr[i]);
+	printf("\n");
+}
+
+int main() {
+	srand(time(NULL));
+	for (int i = 0; i < size; i++) arr[i] = rand() % 100;
+	printf("정렬 전 : ");
+	show();
+
+	insert_sort();
+
+	printf("\n\n정렬 후 : ");
+	show();
+}
