@@ -1,0 +1,60 @@
+#include <stdio.h>
+#define size 5
+int dq[size], front, rear;
+
+void init_dq() {
+	front = 0;
+	rear = 0;
+}
+
+int is_full() {
+	return front == (rear + 1) % size;
+}
+
+int is_empty() {
+	return front == rear;
+}
+
+void add_front(int item) {
+	if (is_full()) printf("IS_FULL!!\n");
+	else {
+		dq[front] = item;
+		front = (front - 1 + size) % size;
+	}
+}
+
+void add_rear(int item) {
+	if (is_full()) printf("IS_FULL!!\n");
+	else dq[++rear % size] = item;
+}
+
+void del_front() {
+	if (is_empty()) printf("IS_EMPTY!!\n");
+	else front++;
+}
+
+void del_rear() {
+	if (is_empty()) printf("IS_EMPTY!!\n");
+	else rear = (rear - 1 + size) % size;
+	
+}
+
+void print_dq() {
+	int i = front;
+	while (1) {
+		if (i == rear % size) break;
+		i = (i + 1) % size;
+		printf("%d  |  ", dq[i]);
+	}
+	printf("\n");
+}
+
+int main() {
+	init_dq();
+	add_front(10); print_dq();
+	add_front(20); print_dq();
+	add_front(30); print_dq();
+	del_rear(); print_dq();
+	del_rear(); print_dq();
+	add_rear(40); print_dq();
+}
