@@ -1,0 +1,38 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#define size 10000
+int stack[size], top = -1;
+int is_full() {
+	return top == size - 1;
+}
+int is_empty() {
+	return top == -1;
+}
+void push(char item) {
+	if (is_full()) printf("ERROR!!\n");
+	else stack[++top] = item;
+}
+int pop() {
+	if (is_empty()) printf("ERROR!!\n");
+	return stack[top--];
+}
+
+int main() {
+	char str[size], cnt = 0;
+	
+	printf("수식 : ");
+	scanf("%[^\n]", str);
+	int len = strlen(str);
+	
+	printf("괄호 수 : ");
+	for (int i = 0; i < len; i++) {
+		if (str[i] == '(') {
+			push(++cnt);
+			printf("%d ", cnt);
+		}
+		else {
+			printf("%d ", pop());
+		}
+	}
+	
+}
