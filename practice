@@ -1,0 +1,362 @@
+//#include<stdio.h>
+//int main() {
+//	int a;
+//	double d = 312.432;
+//	a = 10;
+//	printf("%5.4lf", d);
+//	return 0;
+//}
+//#include<stdio.h>
+//int main() {
+//	int a, b;
+//	a = 10;
+//	b = 3;
+//	printf("a + b는 : %d\n", a + b);
+//	printf("a - b는 : %d\n", a - b);
+//	printf("a * b는 : %d\n", a * b);
+//	printf("a / b는 : %d\n", a / b);
+//	printf("a %% b는 : %d\n", a % b);
+//	return 0;
+//}
+//#include<stdio.h>
+//int test(int a, int b) {
+//	int a = 5, b= 10;
+//	return a + b;
+//}
+//
+//int main() {
+//	int a = 1;
+//	printf("++a = %d\n", ++a);
+//
+//	a = 1;
+//	printf("a++ = %d\n", a++);
+//	printf("a : %d\n", a);
+//	
+//	return 0;
+//}
+//#include<stdio.h>
+//int main() {
+//	int a = 0xAF; // 10101111
+//	int b = 0xB5; // 10110101
+//
+//	printf("%x \n", a & b); // 10100101
+//	printf("%x \n", a | b); // 10111111
+//	printf("%x \n", a ^ b); // 00011010
+//	printf("%x \n", ~a);    // 01010000
+//	printf("%x \n", a << 2);// 10111100
+//	printf("%x \n", a >> 3);// 11110110
+//	// int형은 32 bit(4 byte) 사용하기 때문에 
+//	// a = 00000000 00000000 00000000 10100101
+//	// b = 00000000 00000000 00000000 10110101 인것과 같다. 
+//	// 부정(~) 과 쉬프트(>>)를 주의해서 사용하자.
+//}
+//#include<stdio.h>
+//int main()
+//{
+//	int a = 2147483647;
+//	printf("a : %d\n", a);
+//
+//	a++;
+//	printf("a : %d\n", a);
+//
+//	return 0;
+//}
+//#define _CRT_SECURE_NO_WARNINGS
+//#include<stdio.h>
+//int main() {
+//	double celsius;
+//	printf("섭씨 온도를 화씨 온도로 변환하는 프로그램 입니다.\n");
+//	printf("섭씨 온도를 입력해주세요 : ");
+//	scanf("%lf", &celsius);
+//
+//	printf("섭씨 %f 도는 화씨로 %f도 입니다.\n", celsius, 9 * celsius / 5 + 32);
+//	return 0;
+//}
+//#define _CRT_SECURE_NO_WARNINGS
+//#include<stdio.h>
+//int main() {
+//	char ch;
+//
+//	short sh;
+//	int i;
+//	long lo;
+//
+//	float fl;
+//	double du;
+//
+//	printf("char 형 변수 입력 : ");
+//	scanf("%c", &ch);
+//
+//	printf("short 형 변수 입력 : ");
+//	scanf("%hd", &sh);
+//	printf("int 형 변수 입력 : ");
+//	scanf("%d", &i);
+//	printf("long 형 변수 입력 : ");
+//	scanf("%ld", &lo);
+//
+//	printf("float 형 변수 입력 : ");
+//	scanf("%f", &fl);
+//	printf("double 형 변수 입력 : ");
+//	scanf("%lf", &du);
+//
+//	printf("char : %c, short : %d, int : %d\n", ch, sh, i);
+//	printf("long : %ld, float : %f, double : %f\n", lo, fl, du);
+//
+//	return 0;
+//}
+//#define _CRT_SECURE_NO_WARNINGS
+//#include<stdio.h>
+//int main() {
+//	int i;
+//	printf("입력하고 싶은 숫자를 입력하세요 : ");
+//	scanf("%d", &i);
+//
+//	if (1) {
+//		printf("당신은 행운의 숫자 7을 입력했습니다.");
+//	}
+//	return 0;
+//}
+//#define _CRT_SECURE_NO_WARNINGS
+//#include<stdio.h>
+//int main() {
+//	double i, j;
+//	printf("나누고 싶은 두 정수를 입력하세요 : ");
+//	scanf("%lf %lf", &i, &j);
+//
+//	if (j == 0) {
+//		printf("나눌 수 없다 !!\n");
+//		return 0;
+//	}
+//	printf("%f를 %f로 나눈 결과는 : %f\n", i, j, i / j);
+//
+//	return 0;
+//}
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//int main() {
+//	int sub1, sub2;
+//	printf("SQLD 1과목과 2과목의 점수를 입력해주세요 : ");
+//	scanf("%d %d", &sub1, &sub2);
+//
+//	if (sub1 >= 8 && sub1 + sub2 >= 60) {
+//		printf("합격입니다 !!\n");
+//		return 0;
+//	}
+//
+//	printf("공부좀 더 하고 오세요!!\n");
+//	
+//	return 0;
+//}
+//#define _CRT_SECURE_NO_WARNINGS
+//#include<stdio.h>
+//int main() {
+//	int i, j;
+//
+//	printf("크기를 비교할 두 수를 입력해 주세요 : ");
+//	scanf("%d %d", &i, &j);
+//
+//	if (i > j) printf("%d 는 %d 보다 큽니다 !!\n", i, j);
+//	if (i < j) printf("%d 는 %d 보다 작습니다 !!\n", i, j);
+//	if (i >= j) printf("%d 는 %d 보다 크거나 같습니다 !!\n", i, j);
+//	if (i <= j) printf("%d 는 %d 보다 작거나 같습니다 !!\n", i, j);
+//	if (i == j) printf("%d 는 %d 와(과) 같습니다 !!\n", i, j);
+//	if (i != j) printf("%d 는 %d 와(과) 다릅니다 !!\n", i, j);
+//
+//	return 0;
+//}
+//#define _CRT_SECURE_NO_WARNINGS
+//#include<stdio.h>
+//int main() {
+//	int n;
+//	scanf("%d", &n);
+//	for (int i = 0; i < n; i++) {
+//		for (int j = i; j < n - 1; j++) {
+//			printf(" ");
+//		}
+//		for (int j = 0; j < i * 2 + 1; j++) {
+//			printf("*");
+//		}
+//		printf("\n");
+//	}
+//}
+//#define _CRT_SECURE_NO_WARNINGS
+//#include<stdio.h>
+//int main() {
+//	int n;
+//	scanf("%d", &n);
+//	for (int i = 0; i < n; i++) {
+//		for (int j = 0; j < i; j++) {
+//			printf(" ");
+//		}
+//		for (int j = 0; j < n * 2 - (i * 2 + 1); j++) {
+//			printf("*");
+//		}
+//		printf("\n");
+//	}
+//
+//}
+//#include<stdio.h>
+//int main() {
+//	int j, cnt = 0, arr[1000];
+//	arr[cnt] = 2;
+//	for (int i = 3; i < 1000; i += 2) {
+//		
+//		for (j = 0; j <= cnt; j++) {
+//			if (i % arr[j] == 0) break;
+//		}
+//
+//		if (j > cnt) {
+//			arr[++cnt] = i;
+//		} 
+//	}
+//
+//	for (int i = 0; i <= cnt; i++) printf("%d\n", arr[i]);
+//}
+//
+//#include<stdio.h>
+//int main() {
+//	int n;
+//	printf("초기화 되지 않은 변수 값 : %d", n);
+//
+//	return 0;
+//}
+//
+//}
+//
+
+//#include<stdio.h>
+//int main() {
+//	int arr[1000];
+//	int count = 1;
+//	int ok = 0;
+//	int value = 3;
+//	arr[0] = 2;
+//	for (;;) {
+//		for (int i = 0; i < count; i++) {
+//			if (value % arr[i] == 0) break;
+//			else ok++;
+//		}
+//		
+//		if (ok == count) {
+//			printf("소수 : %d\n", value);
+//			arr[count++] = value;
+//		}
+//
+//		if (count == 1000) break;
+//		value += 2;
+//		ok = 0;
+//	}
+//}
+
+//#include<stdio.h>
+//int main() {
+//	int a;
+//	int b;
+//	int* const pa = &a;
+//
+//	*pa = 3;
+//	pa = &b;
+//
+//	printf("%d %d", *pa, a);
+//}
+//#include<stdio.h>
+//int main() {
+//	int a;
+//	char b;
+//	double c;
+//	int* pa = &a;
+//	char* pb = &b;
+//	double* pc = &c;
+//
+//	printf("pa의 값 : %p\n", pa);
+//	printf("(pa + 1) 의 값 : %p \n", pa + 1);
+//	printf("pb 의 값 : %p \n", pb);
+//	printf("(pb + 1) 의 값 : %p \n", pb + 1);
+//	printf("pc 의 값 : %p \n", pc);
+//	printf("(pc + 1) 의 값 : %p \n", pc + 1);
+//
+//}
+//#include<stdio.h>
+//int main() {
+//	int a;
+//	int* pa = &a;
+//	int b;
+//	int* pb = &b;
+//	int* pc = pa - pb;
+//
+//	printf("%p", pc);
+//	return 0;
+//}
+//#include<stdio.h>
+//int main() {
+//	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int* pa = arr;
+//	for (int i = 0; i < 10; i++) {
+//		printf("%d번째 배열의 값 : %d\n", i + 1, *(pa + i));
+//	}
+//
+//}
+//#include<stdio.h>
+//int main() {
+//	for (int i = 0; i < 10; ++i) {
+//		printf("%d ", i);
+//	}
+//}
+//#include<stdio.h>
+//int main() {
+//	int arr[10] = { 100, 98, 97, 95, 89, 76, 92, 96, 100, 99 };
+//	int* parr = arr;
+//	double sum = 0;
+//	while (parr - arr <= 9) {
+//		sum += (*parr);
+//		parr++;
+//	}
+//
+//	printf("평균 : %f\n", sum / 10);
+//	return 0;
+//}
+//#include<stdio.h> // WOW
+//int main() {
+//	int t = 1;
+//	int arr[10] = { 100, 98, 97, 95, 89,76, 92, 96, 100, 99 };
+//	int* parr = arr;
+//	parr++;
+//	// arr++; 에러발생
+//	t++;
+//	// 1++ 에러발생
+//	return 0;
+//}
+//#include<stdio.h>
+//int main() {
+//	int a = 3;
+//	int (*pa) = &a;
+//	int** ppa = &pa;
+//	
+//	printf("a : %d, pa : %d, ppa : %d\n", a, *pa, **ppa);
+//}
+//#include<stdio.h>
+//int main() {
+//	int arr[3] = { 1, 2, 3 };
+//	int*parr = arr; // int (*parr)[3] = arr;
+//
+//	printf("arr[1] : %d \n", arr[1]);
+//	printf("parr[1] : %d \n", parr[1]);
+//	//printf("parr[1] : %p \n", &(*parr)[1]);
+//	//printf("arr[1] : %p \n", &arr[1]);
+//	
+//	printf("arr : %p, &arr : %p, parr : %p\n ", arr, &arr, parr);
+//}
+#include<stdio.h>
+int main() {
+	int arr[4][2] = { {1,2}, {3,4}, {5,6}, {7,8} };
+	int(*parr)[2] = arr;
+	printf("%d", parr[1][1]);
+}
+#include<stdio.h>
+int main() {
+	int arr[2][2][2] = { { {1,2},{3,4}}, {{5,6},{7,8}} };
+	int(*parr)[2][2] = arr;
+
+	printf("%d", parr[1][0][0]);
+
+}
