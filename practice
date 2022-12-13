@@ -220,10 +220,145 @@
 //
 //	return 0;
 //}
+//#define _CRT_SECURE_NO_WARNINGS
+//#include<stdio.h>
+//int main() {
+//	int i, j, people, studentAvg[10], avg = 0, tmp = 0;
+//	char studentName[10][30];
+//	printf("학생이 몇명인가요 ? ");
+//	scanf("%d", &people);
+//	
+//	printf("학생의 이름과 평균을 %d번 입력해주세요.\n", people);
+//	for (int i = 0; i < people; i++) {
+//		scanf("%s %d", studentName[i], &studentAvg[i]);
+//	}
+//	for (i = 0; i < people - 1; i++) {
+//		avg = i;
+//		for (j = i + 1; j < people; j++) {
+//			if (studentAvg[avg] > studentAvg[j]) avg = j;
+//		}
+//		tmp = studentAvg[avg];
+//		studentAvg
+//
+//	}
 //
 //}
 //
-
+//#include<stdio.h>
+//#include<stdlib.h>
+//
+//struct bst {
+//	int data;
+//	struct bst* left, * right;
+//};
+//
+//struct bst* newNode(int data) {
+//	struct bst* node = (struct bst*)malloc(sizeof(struct bst));
+//	node->data = data;
+//	node->left = NULL;
+//	node->right = NULL;
+//
+//	return node;
+//}
+//
+//struct bst* insert(struct bst* node, int key) {
+//	if (node == NULL) return newNode(key);
+//	if (node->data < key) 
+//		node->right = insert(node->right, key);
+//	else if (node->data > key) 
+//		node->left = insert(node->left, key);
+//
+//	return node;
+//}
+//
+//struct bst* Search(struct bst* node, int key) {
+//	if (node == NULL) return NULL;
+//	if (node->data > key) return Search(node->left, key);
+//	else if (node->data < key) return Search(node->right, key);
+//	return node;
+//}
+//
+//struct bst* max_value(struct bst* node) {
+//	struct bst* max = node;
+//	while (max->right != NULL) {
+//		max = node->right;
+//	}
+//	return max;
+//
+//}
+//
+//struct bst* delete(struct bst* node, int key) {
+//	if (node == NULL) {
+//		printf("탐색 실패로 삭제할 수 없습니다.");
+//		return node;
+//	}
+//	if (node->data > key) node->left = delete(node->left, key);
+//	else if (node->data < key) node->right = delete(node->right, key);
+//	else {
+//
+//		if (node->left == NULL) {
+//			struct bst* temp = node->right;
+//			free(node);
+//			return temp;
+//		}
+//
+//		else if (node->right == NULL) {
+//			struct bst* temp = node->left;
+//			free(node);
+//			return temp;
+//		}
+//
+//		else {
+//			struct bst* temp = max_value(node->left);
+//			node->data = temp->data;
+//			node->left = delete(node->left, temp->data);
+//		}
+//	}
+//	return node;
+//}
+//
+//void lvr(struct bst* node) {
+//	if (node != NULL) {
+//
+//		lvr(node->left);
+//		printf("[%d] ", node->data);
+//		lvr(node->right);
+//	}
+//}
+//
+//int main() {
+//	struct bst* root = NULL;
+//	root = insert(root, 56);
+//	root = insert(root, 45);
+//	root = insert(root, 76);
+//	root = insert(root, 33);
+//	root = insert(root, 48);
+//	root = insert(root, 69);
+//	root = insert(root, 94);
+//	root = insert(root, 44);
+//	root = insert(root, 49);
+//	root = insert(root, 74);
+//	root = insert(root, 95);
+//
+//
+//	printf("삽입 후 : ");
+//	lvr(root);
+//	printf("\n");
+//
+//	root = delete(root, 49);
+//	root = delete(root, 33);
+//	root = delete(root, 76);
+//	root = delete(root, 56);
+//
+//
+//	printf("삭제 후 : ");
+//	lvr(root);
+//	printf("\n");
+//
+//	if (!Search(root, 33)) printf("탐색 실패\n");
+//	if (Search(root, 95)) printf("탐색 성공\n");
+//
+//}
 //#include<stdio.h>
 //int main() {
 //	int arr[1000];
@@ -247,7 +382,6 @@
 //		ok = 0;
 //	}
 //}
-
 //#include<stdio.h>
 //int main() {
 //	int a;
@@ -346,17 +480,102 @@
 //	
 //	printf("arr : %p, &arr : %p, parr : %p\n ", arr, &arr, parr);
 //}
+//#include<stdio.h>
+//int main() {
+//	int arr[4][2] = { {1,2}, {3,4}, {5,6}, {7,8} };
+//	int(*parr)[2] = arr;
+//	printf("%d", parr[1][1]);
+//}
+//#include<stdio.h>
+//int main() {
+//	int arr[2][2][2] = { { {1,2},{3,4}}, {{5,6},{7,8}} };
+//	int(*parr)[2][2] = arr;
+//
+//	printf("%d", parr[1][0][0]);
+//
+//}
+//#include<stdio.h>
+//int slave(int masterMoney, int income) {
+//	masterMoney += income;
+//	printf("MasterMoney : %d\n", masterMoney);
+//	return masterMoney;
+//}
+//int main() {
+//
+//	printf("%d\n", slave(100, 15));
+//}
+//#include<stdio.h>
+//int sum(int value) {
+//	int result = 0;
+//	for (int i = 1; i <= value; ++i) {
+//		result += i;
+//	}
+//
+//	return result;
+//}
+//
+//int main() {
+//	printf("%d\n", sum(10));
+//}
+//#define _CRT_SECURE_NO_WARNINGS
+//#include<stdio.h>
+//int arr[1000001] = { 1, 1 };
+//int main() {
+//	int n, m;
+//	scanf("%d %d", &n, &m);
+//	for (int i = 4; i <= m; i+=2) {
+//		arr[i] = 1;
+//	}
+//	for (int i = 3; i <= m; i += 2) {
+//		for (int j = i * 2 ; j <= m; j+=i ) {
+//			arr[j] = 1;
+//		}
+//	}
+//	for (int i = n; i <= m; i++) {
+//		if (arr[i] == 0) printf("%d\n", i);
+//	}
+//}
+#define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
-int main() {
-	int arr[4][2] = { {1,2}, {3,4}, {5,6}, {7,8} };
-	int(*parr)[2] = arr;
-	printf("%d", parr[1][1]);
+int decimal(int value) {
+	int arr[10000], index = 1, cnt = 0;
+	arr[0] = 2;
+	for (int i = 3; i <= value; i += 2) {
+		cnt = 0;
+		for (int j = 0; j < index; j++) {
+			if (i % arr[j] == 0) break;
+			cnt++;
+		}
+		if (cnt == index) {
+			arr[index++] = i;
+		}
+	}
+	return arr[index - 1] == value;
 }
-#include<stdio.h>
+
+void factorize(int value) {
+	printf("출력결과 : ");
+	if (decimal(value)) {
+		printf("%d", value);
+		return;
+	}
+	int i = 3;
+	while (value % 2 == 0) {
+		printf("2 x ");
+		value /= 2;
+	}
+	while (i <= value / 2) {
+		if (value % i == 0) {
+			value /= i;
+			printf("%d x ", i);
+			continue;
+		}
+		i += 2;
+	}
+	printf("%d\n", value);
+}
 int main() {
-	int arr[2][2][2] = { { {1,2},{3,4}}, {{5,6},{7,8}} };
-	int(*parr)[2][2] = arr;
-
-	printf("%d", parr[1][0][0]);
-
+	int input;
+	scanf("%d", &input);
+	factorize(input);
 }
