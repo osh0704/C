@@ -1,0 +1,18 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+int arr[1000001] = { 1, 1 };
+int main() {
+	int n, m;
+	scanf("%d %d", &n, &m);
+	for (int i = 4; i <= m; i+=2) {
+		arr[i] = 1;
+	}
+	for (int i = 3; i <= m; i += 2) {
+		for (int j = i * 2 ; j <= m; j+=i ) {
+			arr[j] = 1;
+		}
+	}
+	for (int i = n; i <= m; i++) {
+		if (arr[i] == 0) printf("%d\n", i);
+	}
+}
