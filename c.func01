@@ -1,0 +1,37 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+void avgs(int *pavg, int *pstu, int avg) {
+	int max, j, tmp = 0;
+	for (int i = 0; i < 5; i++) {
+		max = i;
+		for (j = i + 1; j < 5; j++) {
+			if (pavg[j] > pavg[max]) {
+				max = j;
+			}
+		}
+		printf("\n%d등 : %d번째 학생 | 성적 : %d", i + 1, max + 1, pavg[max]);
+		if (avg <= pavg[max]) printf("\n합격 여부 : PASS\n");
+		else printf("\n합격 여부 : FAIL\n");
+		
+		tmp = pavg[i];
+		pavg[i] = pavg[max];
+		pavg[max] = tmp;
+
+		pstu[i] = max;
+
+	}
+}
+
+int main() {
+	int stu[5], avg[5], math, eng, kor, lastAvg = 0;
+
+	for (int i = 0; i < 5; i++) {
+		printf("%d번째 학생의 성적 입력 : ", i + 1);
+		scanf("%d %d %d", &math, &eng, &kor);
+		avg[i] = (math + eng + kor) / 3;
+		lastAvg += avg[i];
+	}
+
+	avgs(avg, stu, lastAvg / 5);
+}
